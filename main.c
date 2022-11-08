@@ -4,9 +4,20 @@
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
-int main(int argc, char *argv[]) { 
-	char str[30]="happy C programming";
-		
-	printf("문자열 \"%s\"의 길이: %i", str, strlen(str));
+int main(int argc, char *argv[]) {
+	FILE* fp;
+	
+	char str[30];
+	int i;
+	
+	fp=fopen("sample.txt", "w");
+	
+	for (i=0; i<3; i++) {
+	scanf("%s", str);
+	fprintf(fp, "%s\n", str);
+	}
+	
+	fclose(fp);
+	
 	return 0;
 }
