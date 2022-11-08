@@ -6,16 +6,13 @@
 
 int main(int argc, char *argv[]) {
 	FILE* fp;
-	
+	char c;
 	char str[30];
-	int i;
 	
-	fp=fopen("sample.txt", "w");
+	fp=fopen("sample.txt", "r");
 	
-	for (i=0; i<3; i++) {
-	scanf("%s", str);
-	fprintf(fp, "%s\n", str);
-	}
+	while ((c=fgetc(fp)) != EOF)
+		putchar(c);
 	
 	fclose(fp);
 	
